@@ -1,6 +1,6 @@
 path: ../dataset
 train: customsplit_train.txt
-val: customsplit.txt
+val: customsplit_val.txt
 test: customsplit_test.txt
 
 nc: 8

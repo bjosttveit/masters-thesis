@@ -5,3 +5,4 @@
 .ipynb_checkpoints
 !autosplit_*.txt
 !customsplit_*.txt
+*.cache
