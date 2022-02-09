@@ -1,2 +1,6 @@
 *.txt
 *.jpg
+.DS_Store
+/yolov5
+.ipynb_checkpoints
+!autosplit_*.txt
