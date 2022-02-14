@@ -20,7 +20,11 @@ padding = 64
 from PIL import Image
 import numpy as np
 
-for label in datasetLabels:
+count = len(datasetLabels)
+
+for index, label in enumerate(datasetLabels):
+    print(f"Image: {index + 1} / {count}", end="\r")
+
     fullLabelPath = f"{datasetLabelPath}/{label}"
     fullImagePath = f"{datasetImagePath}/{label[:-4]}.jpg"
 
@@ -80,5 +84,5 @@ for label in datasetLabels:
 
                 gridCellImageData = imageData[gridCellYMin : gridCellYMax, gridCellXMin : gridCellXMax]
                 gridCellImage = Image.fromarray(gridCellImageData)
-                gridCellImage.save(f"{gridImagePath}/{label[:-4]}-{x}-{y}.png")
-
+                gridCellImage.save(f"{gridImagePath}/{label[:-4]}-{x}-{y}.jpg")
+print()
