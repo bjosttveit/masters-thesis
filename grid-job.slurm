@@ -21,4 +21,4 @@ module load Python/3.8.6-GCCcore-10.2.0
 pip3 install -r requirements.txt --user -q
 pip3 install wandb --user -q
 
-python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --single-cls --batch 64 --device 0,1 --workers 16 --epochs 1000 --data ../grid_dataset/data.yaml --weights yolov5m.pt --img 640
+python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --name Grid-L --single-cls --batch 80 --device 0,1 --workers 16 --epochs 1000 --data ../grid_dataset/data.yaml --weights yolov5l.pt --img 640

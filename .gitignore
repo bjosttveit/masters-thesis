@@ -1,6 +1,7 @@
 *.txt
 *.jpg
 *.png
+*.zip
 .DS_Store
 /yolov5
 .ipynb_checkpoints
