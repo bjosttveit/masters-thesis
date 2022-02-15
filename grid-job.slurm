@@ -10,7 +10,7 @@
 #SBATCH --job-name="sheep"
 #SBATCH --output=yolo.out
 #SBATCH --mail-user=bjornar.osttveit@ntnu.no
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=NONE
 
 
 cd ${SLURM_SUBMIT_DIR}/yolov5
@@ -24,5 +24,6 @@ pip3 install wandb --user -q
 #X: 32
 #L: 48
 #M: 80
+#S: 128
 
-python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --name Grid-X --single-cls --batch 32 --device 0,1 --workers 16 --epochs 1000 --data ../grid_dataset/data.yaml --weights yolov5x.pt --img 640
+python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --name Grid-S --single-cls --batch 128 --device 0,1 --workers 16 --epochs 300 --data ../grid_dataset/data.yaml --weights yolov5s.pt --img 640
