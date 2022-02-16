@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --partition=GPUQ
 #SBATCH --account=ie-idi
-#SBATCH --time=36:00:00
+#SBATCH --time=12:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:V100:2
@@ -21,10 +21,10 @@ module load Python/3.8.6-GCCcore-10.2.0
 pip3 install -r requirements.txt --user -q
 pip3 install wandb --user -q
 
-#X: 32
-#L: 48
-#M: 80
-#S: 128
-#N: 256
+#X: 36 12h
+#L: 48 8h
+#M: 80 5h
+#S: 128 3h
+#N: 256 2h
 
-python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --name Grid-N --single-cls --batch 256 --device 0,1 --workers 16 --epochs 300 --data ../grid_dataset/data.yaml --weights yolov5n.pt --img 640
+python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --name Grid-X --single-cls --batch 36 --device 0,1 --workers 16 --epochs 300 --data ../grid_dataset/data.yaml --weights yolov5x.pt --img 640
