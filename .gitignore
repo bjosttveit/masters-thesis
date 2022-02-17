@@ -9,3 +9,6 @@
 !autosplit_*.txt
 !customsplit_*.txt
 *.cache
+3d-model.ipynb
+*.gltf
+*.pt
