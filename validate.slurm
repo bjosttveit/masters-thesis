@@ -21,10 +21,10 @@ module load Python/3.8.6-GCCcore-10.2.0
 
 pip3 install -r requirements.txt --user -q
 
-#X: 36 13h
-#L: 74 8h
-#M: 106 5h
-#S: 162 3h
-#N: 312 2h
+#X: 1
+#L: 1
+#M: 2
+#S: 3
+#N: 4
 
-python3 val.py --data ../dataset/data.yaml --batch-size 32 --weights ../models/Baseline-n.pt --project ../tests --name Baseline-n --exist-ok --task=test --save-txt --save-conf --img 4064 --single-cls
+python3 val.py --data ../dataset/data.yaml --batch-size 3 --weights ../models/Baseline-s.pt --project ../tests --name Baseline-s --exist-ok --task=test --save-txt --save-conf --img 4064 --single-cls
