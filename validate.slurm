@@ -27,4 +27,7 @@ pip3 install -r requirements.txt --user -q
 #S: 3
 #N: 4
 
-python3 val.py --data ../dataset/data.yaml --batch-size 3 --weights ../models/Baseline-s.pt --project ../tests --name Baseline-s --exist-ok --task=test --save-txt --save-conf --img 4064 --single-cls
+S="s"
+B="3"
+
+python3 val.py --data ../dataset/data.yaml --batch-size $B --weights ../models/Baseline-$S.pt --project ../tests --name Baseline-$S --exist-ok --task=test --save-txt --save-conf --img 4064 --single-cls
