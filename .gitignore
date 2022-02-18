@@ -12,3 +12,4 @@
 3d-model.ipynb
 *.gltf
 *.pt
+*.out
