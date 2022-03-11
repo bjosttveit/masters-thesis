@@ -27,4 +27,4 @@ pip3 install wandb --user -q
 #S: 162 3h
 #N: 312 2h
 
-python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --name Grid-M --single-cls --batch 212 --device 0,1 --workers 24 --epochs 1000 --data ../grid_dataset/data.yaml --weights yolov5m.pt --img 640
+python3 -m torch.distributed.launch --nproc_per_node=2 train.py --project Masters --name Grid-M --single-cls --batch 196 --device 0,1 --workers 24 --epochs 1000 --data ../grid_dataset/data.yaml --weights yolov5m.pt --img 640
