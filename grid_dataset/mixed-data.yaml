@@ -1,0 +1,7 @@
+path: ../grid_dataset
+train: [customsplit_train.txt, synthetic/images]
+val: customsplit_val.txt
+test: customsplit_test.txt
+
+nc: 8
+names: ['black sheep', 'brown sheep', 'grey sheep', 'white sheep','black occluded sheep', 'brown occluded sheep', 'grey occluded sheep', 'white occluded sheep']
