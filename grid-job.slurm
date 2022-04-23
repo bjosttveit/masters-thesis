@@ -1,14 +1,14 @@
 #!/bin/sh
 #SBATCH --partition=GPUQ
 #SBATCH --account=ie-idi
-#SBATCH --time=3:00:00
+#SBATCH --time=16:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:V10032:4
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=64G
 #SBATCH --job-name="sheep"
-#SBATCH --output=yolo.out
+#SBATCH --output=yolo-baseline.out
 #SBATCH --mail-user=bjornar.osttveit@ntnu.no
 #SBATCH --mail-type=NONE
 
@@ -27,4 +27,4 @@ pip3 install wandb --user -q
 #S: 162 3h
 #N: 312 2h
 
-python3 -m torch.distributed.launch --nproc_per_node=4 train.py --project Masters --name Grid-M --single-cls --batch 384 --device 0,1,2,3 --workers 24 --epochs 1000 --data ../grid_dataset/data.yaml --weights yolov5m.pt --img 640
+python3 -m torch.distributed.launch --nproc_per_node=4 train.py --project Masters --name Baseline-M --single-cls --batch 300 --device 0,1,2,3 --workers 24 --epochs 1000 --data ../grid_dataset/data.yaml --weights yolov5m.pt --img 640
