@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --partition=GPUQ
 #SBATCH --account=ie-idi
-#SBATCH --time=1:00:00
+#SBATCH --time=2:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:V10032:1
@@ -27,7 +27,7 @@ pip3 install -r requirements.txt --user -q
 #S: 3
 #N: 4
 
-S="s"
-B="3"
+B="2"
 
-python3 val.py --data ../dataset/data.yaml --batch-size $B --workers 12 --weights ../models/Baseline-$S.pt --project ../tests --name Baseline-$S --exist-ok --task=test --save-txt --save-conf --img 4064 --single-cls
+python3 val.py --data ../dataset/data.yaml --batch-size $B --workers 12 --weights ../models/Baseline-m.pt --project ../tests --name Baseline-m --exist-ok --task=test --save-txt --save-conf --img 4064 --single-cls
+python3 val.py --data ../dataset/data.yaml --batch-size $B --workers 12 --weights ../models/Mixed-m.pt --project ../tests --name Mixed-m --exist-ok --task=test --save-txt --save-conf --img 4064 --single-cls

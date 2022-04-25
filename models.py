@@ -4,11 +4,8 @@ import wandb
 api = wandb.Api()
 
 runs = [
-    {"artifact": "run_mxm1lu4o_model:v0", "model": "Baseline-n"},
-    {"artifact": "run_14iz4jlm_model:v0", "model": "Baseline-s"},
-    {"artifact": "run_j5iww4jw_model:v0", "model": "Baseline-m"},
-    {"artifact": "run_n14agv9x_model:v0", "model": "Baseline-l"},
-    {"artifact": "run_n969b61b_model:v0", "model": "Baseline-x"},
+    {"artifact": "run_3bdx3ghg_model:v0", "model": "Baseline-m"},
+    {"artifact": "run_3fh447fq_model:v0", "model": "Mixed-m"},
 ]
 
 if not os.path.exists('models'):
